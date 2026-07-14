@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="description" content="RR ENC - Accesorios de acero inoxidable de primera calidad para damas y caballeros. Cadenas, dijes y más, con calidad y estilo.">
+<title>RR ENC | Accesorios de Acero Inoxidable</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0b0d'/%3E%3Ctext x='50' y='64' font-family='Arial,sans-serif' font-size='42' font-weight='900' fill='%23ffffff' text-anchor='middle'%3ERR%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --steel:#9a9da3; --steel-dark:#333030; --steel-light:#dadce0;
+    --silver:#000000; --black:#0b0b0d; --charcoal:#000000;
+    --white:#ffffff; --platinum:#f7f7f8; --gray:#000000; --gray-light:#e6e6e8;
+    --shadow-sm:0 2px 14px rgba(0,0,0,.06);
+    --shadow:0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-lg:0 25px 55px rgba(0, 0, 0, 0.267);
+    --ease:cubic-bezier(.25,.8,.25,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',sans-serif; color:var(--charcoal); background:var(--platinum);
+    line-height:1.6; overflow-x:hidden; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,h4,.logo{font-family:'Playfair Display',serif;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  input,textarea{font-family:inherit;}
+  ::selection{background:var(--steel);color:var(--black);}
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--platinum);}
+  ::-webkit-scrollbar-thumb{background:var(--steel);border-radius:10px;}
+  ::-webkit-scrollbar-thumb:hover{background:var(--steel-dark);}
+
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  section{padding:100px 0;position:relative;}
+  .section-header{text-align:center;max-width:650px;margin:0 auto 60px;}
+  .section-tag{display:inline-block;color:var(--steel-dark);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;}
+  .section-title{font-size:42px;font-weight:600;margin-bottom:14px;color:var(--black);}
+  .section-subtitle{color:var(--gray);font-size:16px;font-weight:300;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 38px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:4px;transition:all .4s var(--ease);cursor:pointer;border:1px solid transparent;white-space:nowrap;}
+  .btn-primary{background:linear-gradient(135deg,#ffffff,var(--steel-light) 55%,var(--steel) 100%);color:var(--black);box-shadow:0 8px 22px rgba(0,0,0,.2);}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 34px rgba(0,0,0,.32);}
+  .btn-outline{background:transparent;border:1.5px solid var(--black);color:var(--black);padding:13px 30px;font-size:12px;}
+  .btn-outline:hover{background:var(--black);color:var(--white);}
+
+  .fade-in-section{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+  .fade-in-section.visible{opacity:1;transform:translateY(0);}
+
+  /* ===== HEADER ===== */
+  #header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:24px 0;transition:all .4s var(--ease);background:transparent;}
+  #header.scrolled{background:rgba(247,247,248,.95);backdrop-filter:blur(10px);padding:14px 0;box-shadow:0 2px 20px rgba(0,0,0,.06);}
+  .nav-container{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo-mark{font-family:'Anton',sans-serif;font-weight:400;font-size:19px;letter-spacing:-0.5px;background:var(--black);color:var(--white);width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:9px;position:relative;flex-shrink:0;border:1px solid rgba(255,255,255,.12);}
+  .logo-mark::after{content:'';position:absolute;top:22%;bottom:22%;left:50%;width:1px;background:rgba(0,0,0,.35);}
+  .logo-text{font-family:'Poppins',sans-serif;font-size:20px;font-weight:600;letter-spacing:3px;color:var(--white);transition:color .4s var(--ease);}
+  #header.scrolled .logo-text{color:var(--black);}
+  .nav-menu{display:flex;align-items:center;gap:38px;}
+  .nav-link{font-size:14px;font-weight:500;color:var(--white);position:relative;padding:6px 0;transition:color .3s;}
+  #header.scrolled .nav-link{color:var(--charcoal);}
+  .nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--steel);transition:width .3s var(--ease);}
+  .nav-link:hover::after,.nav-link.active::after{width:100%;}
+  .nav-link:hover,.nav-link.active{color:var(--steel-light);}
+  #header.scrolled .nav-link:hover,#header.scrolled .nav-link.active{color:var(--steel-dark);}
+  .search-box{display:flex;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:30px;padding:6px 6px 6px 18px;transition:all .4s var(--ease);}
+  #header.scrolled .search-box{background:var(--gray-light);border-color:transparent;}
+  .search-box input{background:transparent;border:none;outline:none;color:var(--white);font-size:13px;width:130px;}
+  #header.scrolled .search-box input{color:var(--charcoal);}
+  .search-box input::placeholder{color:rgba(255,255,255,.6);}
+  #header.scrolled .search-box input::placeholder{color:var(--gray);}
+  .search-box button{width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:var(--white);border-radius:50%;transition:background .3s;}
+  #header.scrolled .search-box button{color:var(--charcoal);}
+  .search-box svg{width:16px;height:16px;}
+  .menu-toggle{display:none;position:relative;z-index:1002;flex-direction:column;gap:5px;width:26px;}
+  .menu-toggle span{width:100%;height:2px;background:var(--white);transition:all .3s var(--ease);}
+  #header.scrolled .menu-toggle span{background:var(--charcoal);}
+  .menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(6px,6px);}
+  .menu-toggle.active span:nth-child(2){opacity:0;}
+  .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
+
+  /* ===== HERO ===== */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(160deg,var(--black) 0%,#000000 45%,#000000 100%);overflow:hidden;padding:140px 24px 80px;text-align:center;}
+  .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 20%,rgb(0, 0, 0),transparent 40%),radial-gradient(circle at 80% 70%,rgb(0, 0, 0),transparent 40%);}
+  .hero-particles{position:absolute;inset:0;pointer-events:none;}
+  .particle{position:absolute;width:4px;height:4px;background:var(--steel-light);border-radius:50%;opacity:.5;animation:float 8s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0) translateX(0);opacity:.25;}50%{transform:translateY(-30px) translateX(15px);opacity:.8;}}
+  .hero-content{position:relative;z-index:2;max-width:780px;}
+  .hero-tag{display:inline-block;color:var(--steel-light);font-size:13px;font-weight:500;letter-spacing:4px;text-transform:uppercase;margin-bottom:22px;opacity:0;animation:fadeInUp 1s var(--ease) .2s forwards;}
+  .hero-title{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(90px,18vw,170px);line-height:1;letter-spacing:-1px;background:linear-gradient(135deg,#b1a7a7,var(--steel-light) 45%,var(--steel) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px;opacity:0;animation:fadeInUp 1s var(--ease) .4s forwards;}
+  .hero-subtitle{font-size:22px;font-weight:500;color:var(--white);margin-bottom:22px;opacity:0;animation:fadeInUp 1s var(--ease) .6s forwards;}
+  .hero-description{font-size:15.5px;font-weight:300;color:rgba(255,255,255,.75);line-height:1.85;max-width:640px;margin:0 auto 40px;opacity:0;animation:fadeInUp 1s var(--ease) .8s forwards;}
+  .hero-content .btn-primary{opacity:0;animation:fadeInUp 1s var(--ease) 1s forwards;}
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(25px);}to{opacity:1;transform:translateY(0);}}
+  .scroll-indicator{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);color:var(--steel-light);opacity:0;animation:fadeInUp 1s var(--ease) 1.3s forwards,bounce 2.4s ease-in-out 2s infinite;}
+  .scroll-indicator svg{width:24px;height:24px;}
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(10px);}}
+
+  /* ===== PRODUCTOS ===== */
+  .products{background:var(--platinum);}
+  .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px;}
+  .product-card{background:var(--white);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .5s var(--ease),box-shadow .5s var(--ease);}
+  .product-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg);}
+  .product-image{position:relative;height:230px;background:linear-gradient(135deg,#f2f2f4,#e2e3e6);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .product-icon{width:88px;height:88px;color:var(--steel-dark);transition:transform .6s var(--ease);}
+  .product-card:hover .product-icon{transform:scale(1.15) rotate(-5deg);}
+  .product-badge{position:absolute;top:16px;left:16px;background:var(--black);color:var(--white);font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border-radius:20px;}
+  .product-info{padding:26px;}
+  .product-info h3{font-size:20px;font-weight:600;margin-bottom:6px;color:var(--black);}
+  .product-material{font-size:11.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--steel-dark);margin-bottom:12px;}
+  .product-desc{font-size:13.8px;color:var(--gray);line-height:1.7;margin-bottom:22px;min-height:66px;}
+  .no-results{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--gray);font-size:16px;}
+
+  /* ===== SOBRE NOSOTROS ===== */
+  .about{background:var(--black);color:var(--white);position:relative;overflow:hidden;}
+  .about::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border:1px solid rgba(154,157,163,.15);border-radius:50%;}
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center;}
+  .about-visual{display:flex;align-items:center;justify-content:center;}
+  .about-emblem{width:100%;max-width:360px;aspect-ratio:1;border:1.5px solid var(--steel);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;}
+  .about-emblem::before{content:'';position:absolute;inset:24px;border:1px solid rgba(154,157,163,.35);border-radius:50%;}
+  .about-emblem-text{font-family:'Anton',sans-serif;font-weight:400;font-size:56px;background:linear-gradient(135deg,#ffffff,var(--steel-light));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-align:center;line-height:1;letter-spacing:1px;}
+  .about-emblem-text small{display:block;font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:5px;color:var(--silver);-webkit-text-fill-color:var(--silver);margin-top:10px;}
+  .about-content .section-tag{color:var(--steel-light);}
+  .about-content .section-title{color:var(--white);text-align:left;}
+  .about-text p{color:rgba(255,255,255,.75);font-size:15.3px;line-height:1.9;margin-bottom:18px;font-weight:300;}
+  .about-text strong{color:var(--white);font-weight:600;}
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;padding-top:34px;border-top:1px solid rgba(255,255,255,.12);}
+  .stat-item h4{font-family:'Playfair Display',serif;font-size:32px;color:var(--white);margin-bottom:6px;}
+  .stat-item p{font-size:11.5px;color:var(--silver);letter-spacing:.4px;}
+
+  /* ===== TESTIMONIOS ===== */
+  .testimonials{background:var(--platinum);}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
+  .testimonial-card{background:var(--white);padding:38px 30px;border-radius:10px;box-shadow:var(--shadow-sm);transition:transform .4s var(--ease),box-shadow .4s var(--ease);}
+  .testimonial-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .testimonial-quote{color:var(--steel);width:30px;height:30px;margin-bottom:16px;opacity:.85;}
+  .testimonial-stars{color:var(--steel-dark);letter-spacing:2px;margin-bottom:14px;font-size:14px;}
+  .testimonial-text{font-size:14.3px;color:var(--charcoal);line-height:1.8;margin-bottom:22px;font-style:italic;}
+  .testimonial-author{display:flex;align-items:center;gap:12px;}
+  .author-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--steel-dark),var(--charcoal));display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:600;font-family:'Playfair Display',serif;font-size:15px;}
+  .author-info h5{font-size:14px;font-weight:600;margin-bottom:1px;}
+  .author-info span{font-size:11.5px;color:var(--gray);}
+
+  /* ===== CONTACTO ===== */
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;}
+  .contact-info-title{font-size:24px;font-weight:600;margin-bottom:16px;}
+  .contact-info-text{color:var(--gray);font-size:14.5px;line-height:1.8;margin-bottom:32px;}
+  .contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:26px;}
+  .contact-icon{width:44px;height:44px;min-width:44px;border-radius:50%;background:var(--platinum);border:1px solid var(--gray-light);display:flex;align-items:center;justify-content:center;color:var(--steel-dark);transition:all .3s;}
+  .contact-item:hover .contact-icon{background:var(--black);color:var(--white);transform:scale(1.06);}
+  .contact-icon svg{width:19px;height:19px;}
+  .contact-detail h5{font-size:14px;font-weight:600;margin-bottom:4px;}
+  .contact-detail p,.contact-detail a{font-size:13.6px;color:var(--gray);}
+  .contact-detail a:hover{color:var(--steel-dark);}
+  .social-row{display:flex;gap:14px;margin-top:32px;}
+  .social-link{width:44px;height:44px;border-radius:50%;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;transition:all .4s var(--ease);}
+  .social-link:hover{background:linear-gradient(135deg,var(--steel-dark),var(--black));transform:translateY(-5px);}
+  .social-link svg{width:18px;height:18px;}
+  .contact-form{background:var(--platinum);padding:44px;border-radius:14px;}
+  .form-group{margin-bottom:20px;}
+  .form-group label{display:block;font-size:12.5px;font-weight:600;letter-spacing:.4px;margin-bottom:8px;}
+  .form-group input,.form-group textarea{width:100%;padding:14px 18px;border:1.5px solid var(--gray-light);border-radius:6px;font-size:14px;background:var(--white);transition:all .3s;color:var(--charcoal);}
+  .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--steel);box-shadow:0 0 0 4px rgba(154,157,163,.15);}
+  .form-group textarea{resize:vertical;min-height:110px;}
+  .contact-form .btn{width:100%;margin-top:4px;}
+  .form-message{margin-top:0;padding:0 18px;border-radius:6px;font-size:13px;text-align:center;opacity:0;max-height:0;overflow:hidden;transition:all .4s var(--ease);}
+  .form-message.show{opacity:1;max-height:100px;margin-top:14px;padding:13px 18px;}
+  .form-message.success{background:#eaf6ec;color:#2e7d43;}
+  .form-message.error{background:#fbeaea;color:#c0392b;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--black);color:rgba(255,255,255,.65);padding:70px 0 0;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:46px;padding-bottom:54px;border-bottom:1px solid rgba(255,255,255,.1);}
+  .footer-brand p{font-size:13.6px;line-height:1.8;margin-top:16px;max-width:270px;}
+  .footer-col h5{color:var(--white);font-size:14.5px;font-weight:600;margin-bottom:20px;letter-spacing:.4px;}
+  .footer-col ul li{margin-bottom:12px;}
+  .footer-col a{font-size:13.6px;display:inline-flex;align-items:center;gap:8px;transition:color .3s,padding-left .3s;}
+  .footer-col a:hover{color:var(--steel-light);padding-left:4px;}
+  .footer-col a svg{width:15px;height:15px;flex-shrink:0;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:24px 0;flex-wrap:wrap;gap:10px;font-size:12.5px;}
+
+  /* ===== MODAL ===== */
+  .modal-overlay{position:fixed;inset:0;background:rgba(11,11,13,.75);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:2000;opacity:0;visibility:hidden;transition:all .4s var(--ease);padding:20px;}
+  .modal-overlay.active{opacity:1;visibility:visible;}
+  .modal-box{background:var(--white);max-width:540px;width:100%;border-radius:14px;overflow:hidden;transform:scale(.9) translateY(20px);transition:transform .4s var(--ease);max-height:88vh;overflow-y:auto;}
+  .modal-overlay.active .modal-box{transform:scale(1) translateY(0);}
+  .modal-header{background:linear-gradient(135deg,#f2f2f4,#e2e3e6);padding:48px 40px;display:flex;align-items:center;justify-content:center;position:relative;}
+  .modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;color:var(--charcoal);transition:all .3s;}
+  .modal-close:hover{background:var(--black);color:var(--white);transform:rotate(90deg);}
+  .modal-close svg{width:17px;height:17px;}
+  #modalIcon{width:105px;height:105px;color:var(--steel-dark);}
+  .modal-badge{position:absolute;top:16px;left:16px;background:var(--black);color:var(--white);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:6px 13px;border-radius:20px;}
+  .modal-body{padding:34px 40px 40px;}
+  .modal-body h3{font-size:25px;margin-bottom:6px;}
+  .modal-material{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--steel-dark);margin-bottom:16px;}
+  .modal-desc{font-size:14.3px;color:var(--gray);line-height:1.85;margin-bottom:26px;}
+  .modal-actions .btn{width:100%;}
+
+  /* ===== BACK TO TOP ===== */
+  .back-to-top{position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:all .4s var(--ease);z-index:900;box-shadow:var(--shadow);}
+  .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+  .back-to-top:hover{background:var(--steel);color:var(--black);transform:translateY(-5px);}
+  .back-to-top svg{width:19px;height:19px;}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:1024px){
+    .section-title{font-size:34px;}
+    .about-grid{grid-template-columns:1fr;gap:46px;}
+    .about-visual{order:-1;}
+    .about-emblem{max-width:240px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:900px){
+    .nav-menu{position:fixed;top:0;right:-100%;width:min(340px,85%);height:100vh;background:var(--black);flex-direction:column;justify-content:center;align-items:center;gap:28px;transition:right .5s var(--ease);padding:40px;z-index:1001;}
+    .nav-menu.active{right:0;box-shadow:-10px 0 40px rgba(0,0,0,.3);}
+    .nav-menu .nav-link{color:var(--white);font-size:18px;}
+    .nav-menu .search-box{width:100%;background:rgba(43, 42, 42, 0.13);border-color:rgba(255,255,255,.2);margin-top:8px;}
+    .nav-menu .search-box input{width:100%;color:var(--white);}
+    .menu-toggle{display:flex;}
+  }
+  @media (min-width:901px){.menu-toggle{display:none;}}
+  @media (max-width:768px){
+    section{padding:70px 0;}
+    .hero-description{font-size:14.3px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .contact-form{order:-1;padding:32px 24px;}
+    .stat-item h4{font-size:25px;}
+    .modal-header{padding:38px 22px;}
+    .modal-body{padding:26px 22px 30px;}
+  }
+  @media (max-width:640px){
+    .container{padding:0 20px;}
+    .section-title{font-size:27px;}
+    .footer-grid{grid-template-columns:1fr;gap:36px;}
+    .footer-bottom{flex-direction:column;text-align:center;}
+    .products-grid{grid-template-columns:1fr;}
+    .testimonials-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:480px){
+    .hero-title{letter-spacing:0;}
+    .btn{padding:14px 26px;font-size:11.5px;}
+    .logo-text{font-size:17px;}
+    .about-emblem-text{font-size:44px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="nav-container">
+    <h1 class="hero-subtitle">RR</h1>
+    <head>
+  <style>
+    .hero-subtitle {
+      color: #000000;
+      font-family: 'Cinzel', serif !important;
+    }
+  </style>
+</head>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#inicio" class="nav-link active">Inicio</a>
+      <a href="#productos" class="nav-link">Productos</a>
+      <a href="#nosotros" class="nav-link">Sobre Nosotros</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Buscar accesorios...">
+        <button id="searchBtn" type="button" aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </div>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="hero-particles" id="heroParticles"></div>
+  <div class="hero-content">
+    <div style="display: block; text-align: center; margin-bottom: 25px;">
+      <a href="#inicio" class="logo" style="display: inline-block;">
+        <img src="https://i.ibb.co/C3gV4H1W/RR-ENC.png" alt="RR ENC" style="height: 100px; width: auto; brightness(0) invert(1); display: block; margin: 0 auto;">
+      </a>
+    </div>
+    <span class="hero-tag" style="display: block; margin-bottom: 15px;">Acero Inoxidable</span>
+    
+    <p class="hero-subtitle">Accesorios de Acero Inoxidable — Calidad y Estilo</p>
+    <p class="hero-description">Descubrí nuestra selección de accesorios para damas y caballeros. Realizados en acero inoxidable de primera calidad (plata y dorado), nuestros productos garantizan durabilidad y resistencia, manteniendo su color intacto. El complemento perfecto para cualquier ocasión.</p>
+    <a href="#productos" class="btn btn-primary">Explorar Colección</a>
+  </div>
+  <a href="#productos" class="scroll-indicator" aria-label="Desplazarse hacia abajo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
+</section>
+
+<section id="productos" class="products">
+  <div class="container">
+    <div class="section-header fade-in-section">
+      <span class="section-tag">Nuestra Colección</span>
+      <h2 class="section-title">Productos Destacados</h2>
+      <p class="section-subtitle">Piezas en acero inoxidable de primera calidad, pensadas para durar y lucir siempre como nuevas.</p>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<section id="nosotros" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual fade-in-section">
+        <div class="about-emblem">
+          <img src="https://i.ibb.co/C3gV4H1W/RR-ENC.png" alt="RR ENC" style="height: 100px; width: auto; brightness(0) invert(1); display: block; margin: 0 auto;">
+        </div>
+      </div>
+      <div class="about-content fade-in-section">
+        <span class="section-tag">Nuestra Historia</span>
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <div class="about-text">
+          <p><strong>Somos Ronald Alfonso y Elías Ríos, y esto es RR ENC.</strong></p>
+          <p>Empezamos este proyecto en 2025 al notar que en nuestra ciudad faltaban opciones de acero inoxidable de calidad. Nos lanzamos a la aventura y, gracias al apoyo de mucha gente, logramos realizar envíos a la capital y a gran parte del este del país.</p>
+          <p>Después de una pausa para enfocarnos en nuestros estudios, regresamos con más compromiso que nunca. Nuestro objetivo es claro: trabajar duro cada día para convertirnos en la tienda de confianza de toda nuestra ciudad.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item"><h4>2025</h4><p>Año de Fundación</p></div>
+          <div class="stat-item"><h4>02</h4><p>Fundadores</p></div>
+          <div class="stat-item"><h4>+30</h4><p>Envíos Seguros</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonios" class="testimonials">
+  <div class="container">
+    <div class="section-header fade-in-section">
+      <span class="section-tag">Testimonios</span>
+      <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+      <p class="section-subtitle">La confianza de quienes ya son parte de RR ENC.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in-section">
+        <svg class="testimonial-quote" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7c-2.8 0-5 2.2-5 5v5h5v-5H6.5c0-1.4 1.1-2.5 2.5-2.5V7zm9 0c-2.8 0-5 2.2-5 5v5h5v-5h-2.5c0-1.4 1.1-2.5 2.5-2.5V7z"/></svg>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Compré una cadena para mi pareja y superó nuestras expectativas. La calidad del acero es excelente, ni se nota el uso diario.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">D</div>
+          <div class="author-info"><h5>Monse Martinez
+          </h5><span>Cliente RR ENC</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in-section">
+        <svg class="testimonial-quote" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7c-2.8 0-5 2.2-5 5v5h5v-5H6.5c0-1.4 1.1-2.5 2.5-2.5V7zm9 0c-2.8 0-5 2.2-5 5v5h5v-5h-2.5c0-1.4 1.1-2.5 2.5-2.5V7z"/></svg>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Excelente atención por WhatsApp, me asesoraron en todo momento y mi pedido llegó rápido a la capital.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">C</div>
+          <div class="author-info"><h5>Camila R.</h5><span>Cliente RR ENC</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in-section">
+        <svg class="testimonial-quote" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7c-2.8 0-5 2.2-5 5v5h5v-5H6.5c0-1.4 1.1-2.5 2.5-2.5V7zm9 0c-2.8 0-5 2.2-5 5v5h5v-5h-2.5c0-1.4 1.1-2.5 2.5-2.5V7z"/></svg>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Precios justos y calidad de primera. Ya es mi segunda compra en RR ENC y seguro no será la última.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">V</div>
+          <div class="author-info"><h5>Valentina S.</h5><span>Cliente frecuente</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <div class="container">
+    <div class="section-header fade-in-section">
+      <span class="section-tag">Contáctanos</span>
+      <h2 class="section-title">Hablemos</h2>
+      <p class="section-subtitle">¿Tenés alguna consulta? Escribinos y te responderemos a la brevedad.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade-in-section">
+        <h3 class="contact-info-title">Información de Contacto</h3>
+        <p class="contact-info-text">Estamos para ayudarte a encontrar la pieza perfecta. Contactanos por el medio que prefieras.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.7a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.7.7a2 2 0 0 1 1.8 2.2z"/></svg></div>
+          <div class="contact-detail">
+            <h5>WhatsApp</h5>
+            <p><a href="https://wa.me/975184584" target="_blank" rel="noopener">Ronald Alfonso — 975 184 584</a></p>
+            <p><a href="https://wa.me/985505045" target="_blank" rel="noopener">Elías Ríos — 985 505 045</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div>
+          <div class="contact-detail">
+            <h5>Correo Electrónico</h5>
+            <p><a href="mailto:alfonsoronald111@gmail.com">alfonsoronald111@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-detail">
+            <h5>Zona de Envíos</h5>
+            <p>Capital y gran parte del este del país</p>
+          </div>
+        </div>
+
+        <div class="social-row">
+          <a href="https://www.instagram.com/rr.enc" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.tiktok.com/@rr.enc" target="_blank" rel="noopener" class="social-link" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 8.4c-1.7 0-3.2-.9-4-2.3v8.5c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3V2h3c0 .3 0 .6.1.9.3 1.8 1.7 3.2 3.5 3.5.2 0 .3.1.4.1V8.4z"/></svg></a>
+          <a href="https://wa.me/975184584" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.36A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.15c-1.63 0-3.15-.44-4.46-1.2l-.32-.19-3.32.87.89-3.24-.21-.33A8.12 8.12 0 0 1 3.85 12c0-4.5 3.65-8.15 8.15-8.15S20.15 7.5 20.15 12 16.5 20.15 12 20.15zm4.5-6.1c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.06 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg></a>
+        </div>
+      </div>
+
+      <form class="contact-form fade-in-section" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Contanos qué estás buscando..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        <div class="form-message" id="formMessage"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo"><img src="https://i.ibb.co/C3gV4H1W/RR-ENC.png" alt="RR ENC" style="height:40px; width:auto;"></a>
+        <p>Accesorios de acero inoxidable de primera calidad para damas y caballeros. Calidad y estilo en cada pieza.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegación</h5>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#nosotros">Sobre Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Política de Envíos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Enlaces Útiles</h5>
+        <ul>
+          <li><a href="https://www.instagram.com/rr.enc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></svg> Instagram</a></li>
+          <li><a href="https://wa.me/975184584" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.36A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg> WhatsApp Ronald Alfonso</a></li>
+          <li><a href="https://wa.me/985505045" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.36A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg> WhatsApp Elías Ríos</a></li>
+          <li><a href="https://www.tiktok.com/@rr.enc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 8.4c-1.7 0-3.2-.9-4-2.3v8.5c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3V2h3z"/></svg> TikTok</a></li>
+          <li><a href="mailto:alfonsoronald111@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg> alfonsoronald111@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> RR ENC. Todos los derechos reservados.</p>
+      <p>Diseño elegante en acero inoxidable — Paraguay</p>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="productModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span class="modal-badge" id="modalBadge"></span>
+      <button class="modal-close" id="modalClose" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      <div id="modalIcon"></div>
+    </div>
+    <div class="modal-body">
+      <h3 id="modalTitle"></h3>
+      <p class="modal-material" id="modalMaterial"></p>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-actions">
+        <a href="#" id="modalConsult" target="_blank" rel="noopener" class="btn btn-primary">Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+// ===== DATOS DE PRODUCTOS =====
+const products = [
+  {id:1,name:"Cadena Serpiente Plateada",category:"cadena",genero:"Unisex",material:"Acero Inoxidable Plateado",desc:"Cadena plana estilo serpiente en acero inoxidable plateado. Flexible, brillo espejado y resistente al uso diario sin perder su color.",descLarga:"Nuestra Cadena Serpiente Plateada está elaborada en acero inoxidable de primera calidad con acabado plateado espejo. Su diseño plano y flexible se adapta cómodamente al cuello, con un brillo intenso que no se opaca ni se decolora. Resistente al agua y al sudor. Largo: 50-55 cm.",icon:"herringbone"},
+  {id:2,name:"Cadena Espiga Plateada",category:"cadena",genero:"Caballero",material:"Acero Inoxidable Plateado",desc:"Cadena de eslabones entrelazados tipo espiga en acero inoxidable plateado. Diseño grueso, resistente y de gran presencia.",descLarga:"La Cadena Espiga Plateada combina volumen y elegancia. Elaborada en acero inoxidable macizo con un entrelazado tipo espiga que le da textura y resistencia. Ideal para un estilo llamativo que no pierde su brillo ni se deforma con el uso. Largo: 55-60 cm.",icon:"wheat"},
+  {id:3,name:"Cadena Cordón Dorada",category:"cadena",genero:"Unisex",material:"Acero Inoxidable Dorado",desc:"Cadena tipo cordón trenzado en acero inoxidable dorado. Diseño clásico y versátil, perfecta para uso diario o combinar con dijes.",descLarga:"La Cadena Cordón Dorada tiene un trenzado clásico tipo torzal, elaborado en acero inoxidable con baño dorado de alta duración. Versátil y liviana, es ideal para uso diario o para combinar con tus dijes favoritos, manteniendo su brillo intacto con el tiempo. Largo: 50-60 cm.",icon:"rope"},
+  {id:4,name:"Cadena Cubana Dorada",category:"cadena",genero:"Caballero",material:"Acero Inoxidable Dorado",desc:"Cadena de eslabones cubanos en acero inoxidable dorado. Gruesa, resistente y con cierre reforzado, un básico atemporal.",descLarga:"Nuestra Cadena Cubana Dorada es un clásico atemporal: eslabones entrelazados de forma robusta en acero inoxidable con baño dorado de primera calidad. Cierre reforzado tipo mosquetón, resistente a la oxidación y al desgaste diario. Largo: 55-60 cm.",icon:"curb"},
+  {id:5,name:"Cadena Eslabones Dorada",category:"cadena",genero:"Dama",material:"Acero Inoxidable Dorado",desc:"Cadena de eslabones ovalados tipo cable en acero inoxidable dorado. Diseño moderno y minimalista, tendencia actual.",descLarga:"La Cadena Eslabones Dorada combina líneas limpias con un diseño de tendencia: eslabones ovalados tipo cable en acero inoxidable dorado. Liviana, minimalista y perfecta tanto sola como combinada con otras cadenas. Largo: 45-50 cm.",icon:"cable"},
+  {id:6,name:"Dije Cruz Dorado",category:"dije",genero:"Caballero",material:"Acero Inoxidable Dorado",desc:"Dije de cruz con detalles grabados sobre cadena cubana, en acero inoxidable dorado. Simboliza fe y estilo en una sola pieza.",descLarga:"El Dije Cruz Dorado presenta grabados detallados en ambas caras, colgado de una cadena cubana en acero inoxidable con baño dorado. Una pieza con significado, resistente al agua y a la decoloración, ideal para uso diario. Largo de cadena: 55-60 cm.",icon:"cross"},
+  {id:7,name:"Cadena Serpiente Dorada",category:"cadena",genero:"Dama",material:"Acero Inoxidable Dorado",desc:"Versión dorada de nuestra cadena serpiente, plana y flexible, en acero inoxidable de alta calidad y brillo intenso.",descLarga:"La Cadena Serpiente Dorada ofrece el mismo diseño plano y flexible de nuestra línea plateada, ahora en acero inoxidable con baño dorado de alta duración. Cómoda, liviana y con un brillo que resiste el uso diario sin opacarse. Largo: 50-55 cm.",icon:"herringbone"}
+];
+
+function getIconSVG(type){
+  const icons = {
+    herringbone:`<svg viewBox="0 0 100 100" fill="none"><path d="M32 10 Q75 26 32 42 Q75 58 32 74 Q70 88 46 96" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    wheat:`<svg viewBox="0 0 100 100" fill="none"><path d="M50 5 C30 20 70 32 50 50 C30 68 70 80 50 95" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    rope:`<svg viewBox="0 0 100 100" fill="none"><path d="M46 5 Q31 27 46 50 Q61 73 46 95" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M54 5 Q69 27 54 50 Q39 73 54 95" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity="0.5"/></svg>`,
+    curb:`<svg viewBox="0 0 100 100" fill="none"><ellipse cx="36" cy="24" rx="18" ry="10.5" stroke="currentColor" stroke-width="6" transform="rotate(-25 36 24)"/><ellipse cx="62" cy="41" rx="18" ry="10.5" stroke="currentColor" stroke-width="6" transform="rotate(25 62 41)"/><ellipse cx="36" cy="58" rx="18" ry="10.5" stroke="currentColor" stroke-width="6" transform="rotate(-25 36 58)"/><ellipse cx="62" cy="75" rx="18" ry="10.5" stroke="currentColor" stroke-width="6" transform="rotate(25 62 75)"/></svg>`,
+    cable:`<svg viewBox="0 0 100 100" fill="none"><rect x="31" y="6" width="21" height="34" rx="10.5" stroke="currentColor" stroke-width="5.5"/><rect x="48" y="33" width="21" height="34" rx="10.5" stroke="currentColor" stroke-width="5.5"/><rect x="31" y="60" width="21" height="34" rx="10.5" stroke="currentColor" stroke-width="5.5"/></svg>`,
+    cross:`<svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="15" r="7" stroke="currentColor" stroke-width="4.5"/><path d="M50 23 L50 92 M30 44 L70 44" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+  };
+  return icons[type] || icons.herringbone;
+}
+
+// ===== HEADER / MENU MÓVIL =====
+const header = document.getElementById('header');
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+
+menuToggle.addEventListener('click', () => {
+  const isActive = navMenu.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+  menuToggle.setAttribute('aria-expanded', isActive);
+  document.body.style.overflow = isActive ? 'hidden' : '';
+});
+
+document.querySelectorAll('.nav-link').forEach(link=>{
+  link.addEventListener('click', ()=>{
+    navMenu.classList.remove('active');
+    menuToggle.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
+
+// ===== OBSERVER PARA ANIMACIONES AL HACER SCROLL =====
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, {threshold:.15, rootMargin:'0px 0px -50px 0px'});
+
+// ===== RENDER DE PRODUCTOS =====
+function renderProducts(list){
+  const grid = document.getElementById('productsGrid');
+  if(list.length === 0){
+    grid.innerHTML = '<p class="no-results">No se encontraron productos que coincidan con tu búsqueda.</p>';
+    return;
+  }
+  grid.innerHTML = list.map((p,i)=>`
+    <div class="product-card fade-in-section" style="transition-delay:${i*0.06}s">
+      <div class="product-image">
+        <span class="product-badge">${p.genero}</span>
+        <div class="product-icon">${getIconSVG(p.icon)}</div>
+      </div>
+      <div class="product-info">
+        <h3>${p.name}</h3>
+        <p class="product-material">${p.material}</p>
+        <p class="product-desc">${p.desc}</p>
+        <button class="btn btn-outline btn-details" type="button" data-id="${p.id}">Ver Detalles</button>
+      </div>
+    </div>
+  `).join('');
+
+  document.querySelectorAll('.product-card').forEach(card=>observer.observe(card));
+  document.querySelectorAll('.btn-details').forEach(btn=>{
+    btn.addEventListener('click', ()=>openModal(parseInt(btn.dataset.id)));
+  });
+}
+
+// ===== MODAL DE PRODUCTO =====
+const productModal = document.getElementById('productModal');
+function openModal(id){
+  const p = products.find(prod=>prod.id === id);
+  if(!p) return;
+  document.getElementById('modalIcon').innerHTML = getIconSVG(p.icon);
+  document.getElementById('modalBadge').textContent = p.genero;
+  document.getElementById('modalTitle').textContent = p.name;
+  document.getElementById('modalMaterial').textContent = p.material;
+  document.getElementById('modalDesc').textContent = p.descLarga;
+  document.getElementById('modalConsult').href = `https://wa.me/975184584?text=${encodeURIComponent('Hola, me interesa consultar sobre: '+p.name)}`;
+  productModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  productModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.getElementById('modalClose').addEventListener('click', closeModal);
+productModal.addEventListener('click', (e)=>{ if(e.target === productModal) closeModal(); });
+
+// ===== BUSCADOR =====
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', (e)=>{
+  const term = e.target.value.toLowerCase().trim();
+  const filtered = products.filter(p=>
+    p.name.toLowerCase().includes(term) ||
+    p.category.toLowerCase().includes(term) ||
+    p.genero.toLowerCase().includes(term) ||
+    p.material.toLowerCase().includes(term)
+  );
+  renderProducts(filtered);
+});
+searchInput.addEventListener('keypress',(e)=>{
+  if(e.key === 'Enter'){ e.preventDefault(); scrollToSection('productos'); }
+});
+document.getElementById('searchBtn').addEventListener('click',(e)=>{
+  e.preventDefault();
+  scrollToSection('productos');
+  searchInput.focus();
+});
+
+// ===== FORMULARIO DE CONTACTO =====
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  const nombre = document.getElementById('nombre').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const mensaje = document.getElementById('mensaje').value.trim();
+
+  if(!nombre || !email || !mensaje){
+    showFormMessage('Por favor completá todos los campos.', 'error');
+    return;
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailRegex.test(email)){
+    showFormMessage('Por favor ingresá un email válido.', 'error');
+    return;
+  }
+
+  const texto = encodeURIComponent(`Hola RR ENC, mi nombre es ${nombre}.\nEmail: ${email}\nMensaje: ${mensaje}`);
+  showFormMessage(`¡Gracias ${nombre.split(' ')[0]}! Te redirigiremos a WhatsApp para finalizar tu consulta.`, 'success');
+
+  setTimeout(()=>{
+    window.open(`https://wa.me/975184584?text=${texto}`, '_blank');
+    contactForm.reset();
+  }, 1200);
+});
+function showFormMessage(msg, type){
+  const el = document.getElementById('formMessage');
+  el.textContent = msg;
+  el.className = `form-message ${type} show`;
+  setTimeout(()=>el.classList.remove('show'), 5000);
+}
+
+// ===== SCROLL SUAVE CON COMPENSACIÓN DE HEADER =====
+function scrollToSection(id){
+  const target = document.getElementById(id);
+  if(!target) return;
+  const headerHeight = header.offsetHeight;
+  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+  window.scrollTo({top: targetPosition, behavior: 'smooth'});
+}
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+  anchor.addEventListener('click', function(e){
+    const targetId = this.getAttribute('href');
+    if(!targetId || targetId === '#' || targetId.length < 2) return;
+    const target = document.querySelector(targetId);
+    if(target){
+      e.preventDefault();
+      scrollToSection(targetId.substring(1));
+    }
+  });
+});
+
+// ===== EFECTO DE SCROLL EN HEADER + BOTÓN VOLVER ARRIBA =====
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 50) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+
+  if(window.scrollY > 500) backToTop.classList.add('show');
+  else backToTop.classList.remove('show');
+
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(section=>{
+    const sectionTop = section.offsetTop - 150;
+    if(window.pageYOffset >= sectionTop) current = section.getAttribute('id');
+  });
+  document.querySelectorAll('.nav-link').forEach(link=>{
+    link.classList.remove('active');
+    if(link.getAttribute('href') === `#${current}`) link.classList.add('active');
+  });
+});
+backToTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+// ===== TECLA ESCAPE =====
+document.addEventListener('keydown',(e)=>{
+  if(e.key === 'Escape'){
+    closeModal();
+    navMenu.classList.remove('active');
+    menuToggle.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+// ===== PARTÍCULAS DECORATIVAS DEL HERO =====
+const heroParticles = document.getElementById('heroParticles');
+for(let i=0;i<20;i++){
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random()*100+'%';
+  p.style.top = Math.random()*100+'%';
+  p.style.animationDelay = (Math.random()*8)+'s';
+  p.style.animationDuration = (6+Math.random()*6)+'s';
+  heroParticles.appendChild(p);
+}
+
+// ===== OBSERVAR SECCIONES ESTÁTICAS =====
+document.querySelectorAll('.fade-in-section').forEach(el=>observer.observe(el));
+
+// ===== AÑO DEL FOOTER =====
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ===== RENDER INICIAL =====
+renderProducts(products);
+</script>
+</body>
+</html>
